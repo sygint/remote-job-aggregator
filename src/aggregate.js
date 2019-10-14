@@ -1,7 +1,6 @@
 const fs = require("fs");
 const fetch = require("node-fetch");
 
-
 const port = parseInt(process.env.PORT, 10) || 8888;
 const dev = process.env.NODE_ENV !== "production";
 const url = dev ? `http://localhost:${port}` : 'https://job-app.netlify.com';
