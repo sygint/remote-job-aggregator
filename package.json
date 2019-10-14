@@ -5,6 +5,7 @@
   "dependencies": {
     "axios": "^0.19.0",
     "cheerio": "^1.0.0-rc.3",
+    "esm": "^3.2.25",
     "node-fetch": "^2.6.0",
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
@@ -14,10 +15,8 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "aggregate": "node ./src/aggregate",
-    "build": "run-p build:**",
-    "build:app": "react-scripts build",
-    "build:lambda": "netlify-lambda build src/lambda",
+    "aggregate": "node -r esm ./src/aggregator/aggregate",
+    "build": "react-scripts build",
     "test": "echo \"Error: no test specified\" && exit 0",
     "eject": "react-scripts eject"
   },
@@ -31,8 +30,6 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "netlify-cli": "^2.17.0",
-    "netlify-lambda": "^1.6.3",
-    "npm-run-all": "^4.1.5"
+    "netlify-cli": "^2.17.0"
   }
 }
