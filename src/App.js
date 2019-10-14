@@ -4,53 +4,55 @@ import { Helmet } from "react-helmet";
 import GlobalStyles from "./components/GlobalStyle";
 import JobList from "./components/JobList";
 
+import jobs from "./jobs.json";
+
 class App extends Component {
   constructor() {
     super();
 
     this.state = {
-      isLoading: true,
-      jobs: []
+      // isLoading: false,
+      jobs: jobs
     };
   }
 
-  async componentDidMount() {
-    try {
-      const res = await fetch(`/.netlify/functions/get-jobs`);
-      const { success, jobs, error } = await res.json();
+  // async componentDidMount() {
+  //   try {
+  //     const res = await fetch(`/.netlify/functions/get-jobs`);
+  //     const { success, jobs, error } = await res.json();
 
-      if (!success || !jobs) {
-        if (error) {
-          throw Error(error);
-        }
+  //     if (!success || !jobs) {
+  //       if (error) {
+  //         throw Error(error);
+  //       }
 
-        throw Error("unknown error unknown");
-      }
+  //       throw Error("unknown error unknown");
+  //     }
 
-      if (!jobs) {
-        return this.setState({ isLoading: false, jobs: [] });
-      }
+  //     if (!jobs) {
+  //       return this.setState({ isLoading: false, jobs: [] });
+  //     }
 
-      console.log("jobs found, setting state...");
-      return this.setState({ isLoading: false, jobs });
-    } catch (error) {
-      console.log(error);
-    }
+  //     console.log("jobs found, setting state...");
+  //     return this.setState({ isLoading: false, jobs });
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
 
-    return [];
-  }
+  //   return [];
+  // }
 
   render() {
-    const { isLoading, jobs } = this.state;
+    const { /*isLoading,*/ jobs } = this.state;
 
-    if (isLoading) {
-      console.log("loading...");
-      return "loading";
-    }
+    // if (isLoading) {
+    //   console.log("loading...");
+    //   return "loading";
+    // }
 
     if (jobs.length === 0) {
-      console.log("unknown error...");
-      return "error";
+      console.log("No jobs");
+      return "No jobs";
     }
 
     console.log("rendering jobs...");
