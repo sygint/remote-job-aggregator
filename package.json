@@ -5,10 +5,10 @@
   "dependencies": {
     "axios": "^0.19.0",
     "cheerio": "^1.0.0-rc.3",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
+    "react": "^16.10.2",
+    "react-dom": "^16.10.2",
     "react-helmet": "^5.2.1",
-    "react-scripts": "^3.0.1",
+    "react-scripts": "^3.2.0",
     "styled-components": "^4.4.0"
   },
   "scripts": {
@@ -30,8 +30,8 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "netlify-cli": "^2.15.0",
-    "netlify-lambda": "^1.4.5",
+    "netlify-cli": "^2.17.0",
+    "netlify-lambda": "^1.6.3",
     "npm-run-all": "^4.1.5"
   }
 }
