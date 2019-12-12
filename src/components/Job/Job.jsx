@@ -12,7 +12,7 @@ import {
 } from "./styles";
 
 function Job({ job }) {
-  const { company, description, location, position, tags, postedDate, url } = job;
+  const { company, description, location, position, tags, postedDate, url, from } = job;
   return (
     <JobListItem>
       <JobDetails href={url}>
@@ -20,6 +20,7 @@ function Job({ job }) {
           <div>{position}</div>
           <CompanyName>{company} {location && <span>({location})</span>}</CompanyName>
           <div>{tags && tags.length > 0 && tags.map(tag => <Tag>{tag}</Tag>)}</div>
+          found on: {from}
         </JobDetailsMain>
         <PostedDate>{postedDate}</PostedDate>
       </JobDetails>

@@ -6,6 +6,7 @@ const productUrl = "https://remotive.io/remote-jobs/product";
 const allOthersUrl = "https://remotive.io/remote-jobs/all-others";
 
 const providerHostname = "https://remotive.io";
+const providerName = "Remotive";
 
 export default function(request, scraper) {
   let $;
@@ -82,7 +83,8 @@ export default function(request, scraper) {
       description,
       tags,
       postedDate,
-      url: providerHostname + url
+      url: providerHostname + url,
+      from: providerName
     };
   }
 
