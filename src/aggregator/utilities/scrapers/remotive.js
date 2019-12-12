@@ -5,6 +5,8 @@ const marketingSalesUrl = "https://remotive.io/remote-jobs/marketing-sales";
 const productUrl = "https://remotive.io/remote-jobs/product";
 const allOthersUrl = "https://remotive.io/remote-jobs/all-others";
 
+const providerHostname = "https://remotive.io";
+
 export default function(request, scraper) {
   let $;
 
@@ -71,6 +73,7 @@ export default function(request, scraper) {
       .find(".job-date")
       .text()
       .trim();
+    const url = $details.find('.read-more').attr('href');
 
     return {
       position,
@@ -78,7 +81,8 @@ export default function(request, scraper) {
       location,
       description,
       tags,
-      postedDate
+      postedDate,
+      url: providerHostname + url
     };
   }
 

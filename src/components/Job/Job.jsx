@@ -12,10 +12,10 @@ import {
 } from "./styles";
 
 function Job({ job }) {
-  const { company, description, location, position, tags, postedDate } = job;
+  const { company, description, location, position, tags, postedDate, url } = job;
   return (
     <JobListItem>
-      <JobDetails>
+      <JobDetails href={url}>
         <JobDetailsMain>
           <div>{position}</div>
           <CompanyName>{company} {location && <span>({location})</span>}</CompanyName>
