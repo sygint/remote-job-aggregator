@@ -8,9 +8,16 @@ export const JobListItem = styled.li`
     border-radius: 5px;
 `;
 
-export const JobDetails = styled.div`
+export const JobDetails = styled.a`
     display: flex;
     align-items: center;
+    text-decoration: none;
+    color: #006699;
+    cursor: pointer;
+
+    &:hover {
+        color: #000;
+    }
 `;
 
 export const JobDetailsMain = styled.div`
