@@ -59,7 +59,7 @@ export default function(request, scraper) {
       .text()
       .trim();
     const location = $details
-      .find(".location > span.location span")
+      .find(".location span")
       .text()
       .trim();
     const description = $details

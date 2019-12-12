@@ -8,7 +8,7 @@ export const JobListItem = styled.li`
     border-radius: 5px;
 `;
 
-export const JobDetails = styled.div`
+export const JobDetails = styled.a`
     display: flex;
     align-items: center;
 `;
