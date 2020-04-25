@@ -65,10 +65,10 @@ export default function(request, scraper) {
       .find(".location span")
       .text()
       .trim();
-    const description = $details
-      .find(".job-description")
-      .html()
-      .trim();
+    // const description = $details
+    //   .find(".job-description")
+    //   .html()
+    //   .trim();
     const tags = scrapeTags($details);
     const postedDate = $details
       .find(".job-date")
@@ -80,7 +80,7 @@ export default function(request, scraper) {
       position,
       company,
       location,
-      description,
+      // description,
       tags,
       postedDate,
       url: providerHostname + url,
