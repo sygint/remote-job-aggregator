@@ -11,14 +11,17 @@
     "react-dom": "^16.10.2",
     "react-helmet": "^5.2.1",
     "react-scripts": "^3.3.0",
-    "styled-components": "^4.4.0"
+    "styled-components": "^4.4.0",
+    "snyk": "^1.316.1"
   },
   "scripts": {
     "start": "react-scripts start",
     "aggregate": "node -r esm ./src/aggregator/aggregate",
     "build": "react-scripts build",
     "test": "echo \"Error: no test specified\" && exit 0",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -31,5 +34,6 @@
   ],
   "devDependencies": {
     "netlify-cli": "^2.17.0"
-  }
+  },
+  "snyk": true
 }
